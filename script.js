@@ -13,11 +13,21 @@ readMoreBtn.addEventListener('click', function () {
     }
 });
 
-new Swiper('.brands-slider', {
-    spaceBetween: 16,
-    width: 240,
-    pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-      },
+window.addEventListener('resize', function () {
+    if (window.innerWidth < 768) {
+        new Swiper('.brands-slider', {
+            spaceBetween: 16,
+            width: 240,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+            },
+        });
+    } else {
+        // и похоже на то, что элс можно и убрать))
+        const swiperInstance = document.querySelector('.brands-slider').swiper;
+            if (swiperInstance) {
+                swiperInstance.destroy();   
+            }
+    }
 });

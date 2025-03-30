@@ -21,6 +21,9 @@ body {
     height: 80px;
     background-image: linear-gradient(to right, #F8F8F8, #FFFFFF);
     border-top: 1px solid #D9FFF5;
+}
+
+.various-brands__header {
     margin-bottom: 16px;
 }
 
@@ -31,10 +34,6 @@ body {
     text-transform: uppercase;
     color: #7E7E82;
     margin: 16px;
-}
-
-.brands-list {
-    display: none;
 }
 
 .brands-slider__wrapper {
@@ -92,6 +91,9 @@ body {
 @media (min-width: 768px) {
     .header {
         height: 56px;
+    }
+
+    .various-brands__header {
         margin-bottom: 24px;
     }
 
@@ -100,11 +102,11 @@ body {
     }
 
     .brands-slider {
-        display: none;
+        height: auto;
     }
 
-    .brands-list {
-        display: inline-block;
+    .brands-slider::before {
+        display: none;
     }
 
     .brands-list__list {
@@ -183,7 +185,7 @@ body {
     }
 }
 
-.entire-content {
+.various-brands {
     min-width: 320px;
     max-width: 1120px;
     margin: 0 auto;
